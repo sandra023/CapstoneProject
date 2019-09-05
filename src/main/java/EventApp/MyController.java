@@ -1,12 +1,59 @@
 package EventApp;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
+import java.util.Optional;
 
 @RestController
 public class MyController {
+
+    @Autowired
+    private PostRepository postRepository;
+
     @GetMapping("/")
     public String hello(){
         return "hello out there";
     }
+
+    @GetMapping("/posts")
+    public Iterable<Post> getPosts(){
+        return postRepository.findAll();
+    }
+
+    @DeleteMapping("/posts/{id}")
+    public void deletePost(@PathVariable Long id){
+        postRepository.deleteById(id);
+    }
+
+    @PutMapping("/posts/{id}")
+    public Post edit(@PathVariable("id") Long id, @RequestBody Post postData) throws Exception{
+        Optional<Post> response = postRepository.findById(id);
+        if(response.isPresent()){
+            Post post = response.get();
+            post.setText(postData.getText());
+
+            return postRepository.save(post);
+        }
+        throw new Exception("no such post");
+    }
+
+    @GetMapping("/post/{id}")
+    public Post post (@PathVariable("id") Long id) throws Exception{
+        Optional<Post> response = postRepository.findById(id);
+        if(response.isPresent()){
+            return response.get();
+        }
+        throw new Exception("no such post");
+    }
+
+    @PostMapping("/posts")
+    public Post createPost(@RequestBody Post post){
+        Post createdPost = postRepository.save(post);
+        return createdPost;
+    }
 }
+
+
+//my database url    mysql://b9b79e234d81aa:472fde27@us-cdbr-iron-east-02.cleardb.net/heroku_457114c7fe415a1?reconnect=true

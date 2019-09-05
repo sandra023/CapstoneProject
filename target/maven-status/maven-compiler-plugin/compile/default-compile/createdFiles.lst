@@ -1,2 +1,6 @@
-EventApp/MyController.class
+EventApp/UserRepository.class
 EventApp/Application.class
+EventApp/Post.class
+EventApp/MyController.class
+EventApp/PostRepository.class
+EventApp/User.class
