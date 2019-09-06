@@ -1,9 +1,14 @@
 package EventApp;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.Optional;
 
 @RestController
@@ -14,6 +19,12 @@ public class MyController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 //    @GetMapping("/")
 //    public String hello(){
@@ -34,10 +45,10 @@ public class MyController {
         postRepository.deleteById(id);
     }
 
-//    @DeleteMapping("/users/{id}")
-//    public void deletePost(@PathVariable Long id){
-//        userRepository.deleteById(id);
-//    }
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable Long id){
+        userRepository.deleteById(id);
+    }
 
     @PutMapping("/posts/{id}")
     public Post edit(@PathVariable("id") Long id, @RequestBody Post postData) throws Exception{
@@ -50,6 +61,18 @@ public class MyController {
         }
         throw new Exception("no such post");
     }
+    @PutMapping("/users/{id}")
+    public User edit(@PathVariable("id") Long id, @RequestBody User userData) throws Exception{
+        Optional<User> response = userRepository.findById(id);
+        if(response.isPresent()){
+            User user = response.get();
+            user.setEmail(userData.getEmail());
+            user.setFirstName(userData.getFirstName());
+            user.setPassword(userData.getPassword());
+            return userRepository.save(user);
+        }
+        throw new Exception("No such user");
+    }
 
     @GetMapping("/post/{id}")
     public Post post (@PathVariable("id") Long id) throws Exception{
@@ -59,11 +82,35 @@ public class MyController {
         }
         throw new Exception("no such post");
     }
+    @GetMapping("/users/{id}")
+    public User user (@PathVariable("id") Long id) throws Exception{
+        Optional<User> response = userRepository.findById(id);
+        if(response.isPresent()){
+            return response.get();
+        }
+        throw new Exception("No such user");
+    }
 
     @PostMapping("/posts")
     public Post createPost(@RequestBody Post post){
         Post createdPost = postRepository.save(post);
         return createdPost;
+    }
+
+    @PostMapping("/auth/login")
+    public User login(@RequestBody User login, HttpSession session) throws IOException {
+        bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        User user = userRepository.findByEmail(login.getEmail());
+        if(user == null){
+            throw new IOException("Invalid Credentials");
+        }
+        boolean valid = bCryptPasswordEncoder.matches(login.getPassword(), user.getPassword());
+        if(valid){
+            session.setAttribute("email", user.getEmail());
+            return user;
+        }else{
+            throw new IOException("Invalid Credentials");
+        }
     }
 
 
