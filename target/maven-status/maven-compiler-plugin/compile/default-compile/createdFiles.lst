@@ -1,4 +1,8 @@
 EventApp/UserRepository.class
+EventApp/CorsConfig.class
+EventApp/UserService.class
+EventApp/WebMvcConfig.class
+EventApp/SecurityConfiguration.class
 EventApp/Application.class
 EventApp/Post.class
 EventApp/MyController.class
