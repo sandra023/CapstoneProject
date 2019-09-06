@@ -53,7 +53,8 @@ public class MyController {
         Post createdPost = postRepository.save(post);
         return createdPost;
     }
+
+
+
 }
 
-
-//my database url    mysql://b9b79e234d81aa:472fde27@us-cdbr-iron-east-02.cleardb.net/heroku_457114c7fe415a1?reconnect=true

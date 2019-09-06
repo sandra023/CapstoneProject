@@ -13,6 +13,7 @@ public class Post {
 
     @ManyToOne
     private User user;
+    //private String userId;
 
     public String getText() {
         return text;
