@@ -12,20 +12,32 @@ public class MyController {
     @Autowired
     private PostRepository postRepository;
 
-    @GetMapping("/")
-    public String hello(){
-        return "hello out there";
-    }
+    @Autowired
+    private UserRepository userRepository;
+
+//    @GetMapping("/")
+//    public String hello(){
+//        return "hello out there";
+//    }
 
     @GetMapping("/posts")
     public Iterable<Post> getPosts(){
         return postRepository.findAll();
+    }
+    @GetMapping("/users")
+    public Iterable<User> getUsers(){
+        return userRepository.findAll();
     }
 
     @DeleteMapping("/posts/{id}")
     public void deletePost(@PathVariable Long id){
         postRepository.deleteById(id);
     }
+
+//    @DeleteMapping("/users/{id}")
+//    public void deletePost(@PathVariable Long id){
+//        userRepository.deleteById(id);
+//    }
 
     @PutMapping("/posts/{id}")
     public Post edit(@PathVariable("id") Long id, @RequestBody Post postData) throws Exception{
