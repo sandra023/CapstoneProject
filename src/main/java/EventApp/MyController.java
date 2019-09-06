@@ -96,6 +96,12 @@ public class MyController {
         Post createdPost = postRepository.save(post);
         return createdPost;
     }
+    
+    @PostMapping("/users")
+    public User createUser(@RequestBody User user){
+        User createdUser = userService.saveUser(user);
+        return createdUser;
+    }
 
     @PostMapping("/auth/login")
     public User login(@RequestBody User login, HttpSession session) throws IOException {
