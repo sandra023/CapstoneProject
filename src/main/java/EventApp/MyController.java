@@ -74,7 +74,7 @@ public class MyController {
         throw new Exception("No such user");
     }
 
-    @GetMapping("/posts/{id}")
+    @GetMapping("/post/{id}")
     public Post post (@PathVariable("id") Long id) throws Exception{
         Optional<Post> response = postRepository.findById(id);
         if(response.isPresent()){
