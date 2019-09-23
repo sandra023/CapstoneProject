@@ -69,6 +69,10 @@ public class MyController {
             user.setEmail(userData.getEmail());
             user.setFirstName(userData.getFirstName());
             user.setPassword(userData.getPassword());
+            user.setAboutOne(userData.getAboutOne());
+            user.setAboutTwo(userData.getAboutTwo());
+            user.setAboutThree(userData.getAboutThree());
+            user.setAboutFour(userData.getAboutFour());
             return userRepository.save(user);
         }
         throw new Exception("No such user");
@@ -96,7 +100,7 @@ public class MyController {
         Post createdPost = postRepository.save(post);
         return createdPost;
     }
-    
+
     @PostMapping("/users")
     public User createUser(@RequestBody User user){
         User createdUser = userService.saveUser(user);

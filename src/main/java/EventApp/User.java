@@ -23,6 +23,14 @@ public class User {
 
     private String password;
 
+    private String aboutOne;
+
+    private String aboutTwo;
+
+    private String aboutThree;
+
+    private String aboutFour;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Set<Post> posts;
 
@@ -64,5 +72,37 @@ public class User {
 
     public void setId(Long id){
         this.id = id;
+    }
+
+    public String getAboutOne() {
+        return aboutOne;
+    }
+
+    public void setAboutOne(String aboutOne) {
+        this.aboutOne = aboutOne;
+    }
+
+    public String getAboutTwo() {
+        return aboutTwo;
+    }
+
+    public void setAboutTwo(String aboutTwo) {
+        this.aboutTwo = aboutTwo;
+    }
+
+    public String getAboutThree() {
+        return aboutThree;
+    }
+
+    public void setAboutThree(String aboutThree) {
+        this.aboutThree = aboutThree;
+    }
+
+    public String getAboutFour() {
+        return aboutFour;
+    }
+
+    public void setAboutFour(String aboutFour) {
+        this.aboutFour = aboutFour;
     }
 }
