@@ -56,6 +56,18 @@ public class MyController {
         if(response.isPresent()){
             Post post = response.get();
             post.setText(postData.getText());
+            post.setEducation(postData.getEducation());
+            post.setHealth(postData.getHealth());
+            post.setSports(postData.getSports());
+            post.setEvents(postData.getEvents());
+            post.setFood(postData.getFood());
+            post.setMeditation(postData.getMeditation());
+            post.setChildren(postData.getChildren());
+            post.setTravel(postData.getTravel());
+            post.setVolunteer(postData.getVolunteer());
+            post.setArt(postData.getArt());
+            post.setTech(postData.getTech());
+            post.setDrink(postData.getDrink());
 
             return postRepository.save(post);
         }
@@ -73,6 +85,19 @@ public class MyController {
             user.setAboutTwo(userData.getAboutTwo());
             user.setAboutThree(userData.getAboutThree());
             user.setAboutFour(userData.getAboutFour());
+            user.setEducation(userData.getEducation());
+            user.setHealth(userData.getHealth());
+            user.setSports(userData.getSports());
+            user.setEvents(userData.getEvents());
+            user.setFood(userData.getFood());
+            user.setMeditation(userData.getMeditation());
+            user.setChildren(userData.getChildren());
+            user.setTravel(userData.getTravel());
+            user.setVolunteer(userData.getVolunteer());
+            user.setArt(userData.getArt());
+            user.setTech(userData.getTech());
+            user.setDrink(userData.getDrink());
+
             return userRepository.save(user);
         }
         throw new Exception("No such user");
@@ -103,6 +128,8 @@ public class MyController {
 
     @PostMapping("/users")
     public User createUser(@RequestBody User user){
+
+
         User createdUser = userService.saveUser(user);
         return createdUser;
     }

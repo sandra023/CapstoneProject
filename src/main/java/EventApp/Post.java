@@ -15,6 +15,127 @@ public class Post {
     private User user;
     //private String userId;
 
+    private String education;
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    private String health;
+
+    public String getHealth() {
+        return health;
+    }
+
+    public void setHealth(String health) {
+        this.health = health;
+    }
+
+    private String sports;
+
+
+    public String getSports() {
+        return sports;
+    }
+
+    public void setSports(String sports) {
+        this.sports = sports;
+    }
+
+    private String events;
+
+    public String getEvents() {
+        return events;
+    }
+
+    public void setEvents(String events) {
+        this.events = events;
+    }
+
+    private String food;
+
+    public String getFood() {
+        return food;
+    }
+
+    public void setFood(String food) {
+        this.food = food;
+    }
+
+    private String meditation;
+
+    public String getMeditation() {
+        return meditation;
+    }
+
+    public void setMeditation(String meditation) {
+        this.meditation = meditation;
+    }
+
+    private String children;
+
+    public String getChildren() {
+        return children;
+    }
+
+    public void setChildren(String children) {
+        this.children = children;
+    }
+
+    private String travel;
+
+    public String getTravel() {
+        return travel;
+    }
+
+    public void setTravel(String travel) {
+        this.travel = travel;
+    }
+
+    private String volunteer;
+
+    public String getVolunteer() {
+        return volunteer;
+    }
+
+    public void setVolunteer(String volunteer) {
+        this.volunteer = volunteer;
+    }
+
+    private String art;
+
+    public String getArt() {
+        return art;
+    }
+
+    public void setArt(String art) {
+        this.art = art;
+    }
+
+    private String tech;
+
+    public String getTech() {
+        return tech;
+    }
+
+    public void setTech(String tech) {
+        this.tech = tech;
+    }
+
+    private String drink;
+
+    public String getDrink() {
+        return drink;
+    }
+
+    public void setDrink(String drink) {
+        this.drink = drink;
+    }
+
     public String getText() {
         return text;
     }
