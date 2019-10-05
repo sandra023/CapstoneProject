@@ -41,14 +41,14 @@ public class User {
         this.education = education;
     }
 
-    private String health;
+    private String outdoors;
 
-    public String getHealth() {
-        return health;
+    public String getOutdoors() {
+        return outdoors;
     }
 
-    public void setHealth(String health) {
-        this.health = health;
+    public void setOutdoors(String outdoors) {
+        this.outdoors = outdoors;
     }
 
     private String sports;
@@ -82,14 +82,14 @@ public class User {
         this.food = food;
     }
 
-    private String meditation;
+    private String wellness;
 
-    public String getMeditation() {
-        return meditation;
+    public String getWellness() {
+        return wellness;
     }
 
-    public void setMeditation(String meditation) {
-        this.meditation = meditation;
+    public void setWellness(String wellness) {
+        this.wellness = wellness;
     }
 
     private String children;

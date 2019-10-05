@@ -57,11 +57,11 @@ public class MyController {
             Post post = response.get();
             post.setText(postData.getText());
             post.setEducation(postData.getEducation());
-            post.setHealth(postData.getHealth());
+            post.setOutdoors(postData.getOutdoors());
             post.setSports(postData.getSports());
             post.setEvents(postData.getEvents());
             post.setFood(postData.getFood());
-            post.setMeditation(postData.getMeditation());
+            post.setWellness(postData.getWellness());
             post.setChildren(postData.getChildren());
             post.setTravel(postData.getTravel());
             post.setVolunteer(postData.getVolunteer());
@@ -86,11 +86,11 @@ public class MyController {
             user.setAboutThree(userData.getAboutThree());
             user.setAboutFour(userData.getAboutFour());
             user.setEducation(userData.getEducation());
-            user.setHealth(userData.getHealth());
+            user.setOutdoors(userData.getOutdoors());
             user.setSports(userData.getSports());
             user.setEvents(userData.getEvents());
             user.setFood(userData.getFood());
-            user.setMeditation(userData.getMeditation());
+            user.setWellness(userData.getWellness());
             user.setChildren(userData.getChildren());
             user.setTravel(userData.getTravel());
             user.setVolunteer(userData.getVolunteer());
