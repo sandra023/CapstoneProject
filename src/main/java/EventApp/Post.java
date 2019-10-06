@@ -9,7 +9,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String text;
+    private String about;
 
     @ManyToOne
     private User user;
@@ -136,12 +136,12 @@ public class Post {
         this.drink = drink;
     }
 
-    public String getText() {
-        return text;
+    public String getAbout() {
+        return about;
     }
 
-    public void setText(String textInput){
-        this.text = textInput;
+    public void setAbout(String about){
+        this.about = about;
     }
 
     public Long getId(){
@@ -159,4 +159,57 @@ public class Post {
     public void setUser(User user) {
         this.user = user;
     }
+
+    private String name;
+
+    private String Location;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return Location;
+    }
+
+    public void setLocation(String location) {
+        Location = location;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public void setDate(int date) {
+        this.date = date;
+    }
+
+    private String url;
+
+    private int time;
+
+    private int date;
+
+
+
 }
