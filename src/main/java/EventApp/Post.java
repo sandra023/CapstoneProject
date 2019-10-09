@@ -198,27 +198,27 @@ public class Post {
         this.url = url;
     }
 
-    public int getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
     private String url;
 
-    private int time;
+    private String time;
 
-    private int date;
+    private String date;
 
 
 
