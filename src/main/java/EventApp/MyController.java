@@ -73,6 +73,7 @@ public class MyController {
             post.setArt(postData.getArt());
             post.setTech(postData.getTech());
             post.setDrink(postData.getDrink());
+            post.setEventPhoto(postData.getEventPhoto());
 
             return postRepository.save(post);
         }
