@@ -33,6 +33,66 @@ public class User {
 
     private String education;
 
+    private String imageOne;
+
+    private String imageTwo;
+
+    private String imageThree;
+
+    private String imageFour;
+
+    private String imageFive;
+
+    private String imageSix;
+
+    public String getImageOne() {
+        return imageOne;
+    }
+
+    public void setImageOne(String imageOne) {
+        this.imageOne = imageOne;
+    }
+
+    public String getImageTwo() {
+        return imageTwo;
+    }
+
+    public void setImageTwo(String imageTwo) {
+        this.imageTwo = imageTwo;
+    }
+
+    public String getImageThree() {
+        return imageThree;
+    }
+
+    public void setImageThree(String imageThree) {
+        this.imageThree = imageThree;
+    }
+
+    public String getImageFour() {
+        return imageFour;
+    }
+
+    public void setImageFour(String imageFour) {
+        this.imageFour = imageFour;
+    }
+
+    public String getImageFive() {
+        return imageFive;
+    }
+
+    public void setImageFive(String imageFive) {
+        this.imageFive = imageFive;
+    }
+
+    public String getImageSix() {
+        return imageSix;
+    }
+
+    public void setImageSix(String imageSix) {
+        this.imageSix = imageSix;
+    }
+
     public String getEducation() {
         return education;
     }
@@ -227,4 +287,6 @@ public class User {
     public void setAboutFour(String aboutFour) {
         this.aboutFour = aboutFour;
     }
+
+
 }

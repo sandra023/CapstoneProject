@@ -103,6 +103,12 @@ public class MyController {
             user.setArt(userData.getArt());
             user.setTech(userData.getTech());
             user.setDrink(userData.getDrink());
+            user.setImageOne(userData.getImageOne());
+            user.setImageTwo(userData.getImageTwo());
+            user.setImageThree(userData.getImageThree());
+            user.setImageFour(userData.getImageFour());
+            user.setImageFive(userData.getImageFive());
+            user.setImageSix(userData.getImageSix());
 
             return userRepository.save(user);
         }
