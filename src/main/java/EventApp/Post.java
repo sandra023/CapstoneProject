@@ -17,13 +17,13 @@ public class Post {
 
     private String education;
 
-    private int eventPhoto;
+    private String eventPhoto;
 
-    public int getEventPhoto() {
+    public String getEventPhoto() {
         return eventPhoto;
     }
 
-    public void setEventPhoto(int eventPhoto) {
+    public void setEventPhoto(String eventPhoto) {
         this.eventPhoto = eventPhoto;
     }
 
