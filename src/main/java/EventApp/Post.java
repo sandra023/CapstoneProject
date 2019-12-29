@@ -220,6 +220,16 @@ public class Post {
 
     private String date;
 
+    public String getPostNumber() {
+        return postNumber;
+    }
+
+    public void setPostNumber(String postNumber) {
+        this.postNumber = postNumber;
+    }
+
+    private String postNumber;
+
 
 
 }

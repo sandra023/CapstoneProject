@@ -55,6 +55,7 @@ public class MyController {
         Optional<Post> response = postRepository.findById(id);
         if(response.isPresent()){
             Post post = response.get();
+            post.setPostNumber(postData.getPostNumber());
             post.setAbout(postData.getAbout());
             post.setName(postData.getName());
             post.setLocation(postData.getLocation());
